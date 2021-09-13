@@ -33,7 +33,9 @@ jobs:
           java-version: '11'
     
       - name: Java version
-        run: 'java -version'
+        run: | 
+          'java -version'
+          'python -V'
         
       # Runs a single command using the runners shell
 #       - name: Install Bazel
