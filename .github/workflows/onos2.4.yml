@@ -58,3 +58,6 @@ jobs:
           sudo apt update && sudo apt install bazel-3.4.1
           bazel --version
           
+      - name: Build Onos
+        run: bazel build onos
+          
