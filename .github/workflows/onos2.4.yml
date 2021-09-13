@@ -34,7 +34,7 @@ jobs:
     
       - name: Java version
         run: | 
-          'java -version'
+          'java -version',
           'python -V'
         
       # Runs a single command using the runners shell
