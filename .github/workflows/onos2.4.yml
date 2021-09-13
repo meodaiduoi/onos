@@ -42,7 +42,7 @@ jobs:
       - name: Mount bazel cache
         uses: actions/cache@v2
         with:
-          path: '~/.cache/bazel'
+          path: "/home/runner/.cache/bazel"
           key: bazel
       
       # Install Bazel build tool
