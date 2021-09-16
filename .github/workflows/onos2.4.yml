@@ -62,13 +62,12 @@ jobs:
       - name: Build Onos by Bazel
         run: bazel build onos
           
-      # Workaround, get true path to bazel-bin
-      - name: Get build path workaround for symlink directory
-        run: |
-          echo "bazel-bin=$(bazel info bazel-bin)" >> $GITHUB_ENV
-          
+      # archive for faster upload
+      - name: archive file for uploading
+        run: 7z a bazel-bin.7z bazel-bin\
+        
       # Upload artifact
       - uses: actions/upload-artifact@v2
         with:
-          name: Upload build
-          path: ${{ env.bazel-bin }} # or path/to/artifact
+          name: upload
+          path: bazel-bin.7z
